@@ -131,11 +131,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var AppComponent = /*#__PURE__*/_createClass(function AppComponent() {
-      _classCallCheck(this, AppComponent);
+    var AppComponent = /*#__PURE__*/function () {
+      function AppComponent() {
+        _classCallCheck(this, AppComponent);
 
-      this.title = 'video';
-    });
+        this.title = 'video';
+      }
+
+      _createClass(AppComponent, [{
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          var marketingVideo = document.getElementById('marketingVideo');
+          var detectTap;
+
+          if (marketingVideo) {
+            // marketingVideo.addEventListener('play', () => {
+            //   this.gaService.event('marketing_video_viewed');
+            //   // console.log("played");
+            //         if(carouselVideo) {
+            //           carouselVideo.pause();
+            //         }
+            // });
+            // // debugger;
+            marketingVideo.addEventListener('touchstart', function () {
+              detectTap = false; // console.log("touchstarted");
+            });
+            marketingVideo.addEventListener('touchmove', function () {
+              detectTap = true;
+            });
+            marketingVideo.addEventListener('touchend', function () {
+              if (detectTap) {
+                marketingVideo.pause();
+              } else {
+                if (marketingVideo.paused) {
+                  marketingVideo.play();
+                } else {
+                  marketingVideo.pause();
+                }
+              }
+            });
+          }
+        }
+      }]);
+
+      return AppComponent;
+    }();
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
       return new (t || AppComponent)();
@@ -146,7 +186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-root"]],
       decls: 2,
       vars: 0,
-      consts: [["width", "600", "height", "600", "controls", ""], ["src", "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", "type", "video/mp4"]],
+      consts: [["id", "marketingVideo", "width", "600", "height", "600", "controls", ""], ["src", "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", "type", "video/mp4"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "video", 0);

@@ -74,9 +74,43 @@ class AppComponent {
     constructor() {
         this.title = 'video';
     }
+    ngAfterViewInit() {
+        const marketingVideo = document.getElementById('marketingVideo');
+        let detectTap;
+        if (marketingVideo) {
+            // marketingVideo.addEventListener('play', () => {
+            //   this.gaService.event('marketing_video_viewed');
+            //   // console.log("played");
+            //         if(carouselVideo) {
+            //           carouselVideo.pause();
+            //         }
+            // });
+            // // debugger;
+            marketingVideo.addEventListener('touchstart', () => {
+                detectTap = false;
+                // console.log("touchstarted");
+            });
+            marketingVideo.addEventListener('touchmove', () => {
+                detectTap = true;
+            });
+            marketingVideo.addEventListener('touchend', () => {
+                if (detectTap) {
+                    marketingVideo.pause();
+                }
+                else {
+                    if (marketingVideo.paused) {
+                        marketingVideo.play();
+                    }
+                    else {
+                        marketingVideo.pause();
+                    }
+                }
+            });
+        }
+    }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 2, vars: 0, consts: [["width", "600", "height", "600", "controls", ""], ["src", "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", "type", "video/mp4"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 2, vars: 0, consts: [["id", "marketingVideo", "width", "600", "height", "600", "controls", ""], ["src", "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", "type", "video/mp4"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "video", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "source", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -86,7 +120,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         args: [{
                 selector: 'app-root',
                 templateUrl: './app.component.html',
-                styleUrls: ['./app.component.scss']
+                styleUrls: ['./app.component.scss'],
             }]
     }], null, null); })();
 
