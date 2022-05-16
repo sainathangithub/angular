@@ -186,7 +186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-root"]],
       decls: 2,
       vars: 0,
-      consts: [["id", "marketingVideo", "playsinline", "", "width", "600", "height", "600", "controls", ""], ["src", "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", "type", "video/mp4"]],
+      consts: [["id", "marketingVideo", "playsinline", "", "width", "200", "height", "200", "controls", ""], ["src", "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", "type", "video/mp4"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "video", 0);
