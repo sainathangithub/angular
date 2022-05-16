@@ -22,10 +22,9 @@ export class AppComponent implements AfterViewInit {
       // });
       // // debugger;
       marketingVideo.addEventListener('touchstart', () => {
-        detectTap = false;
-        // console.log("touchstarted");
+        marketingVideo.play();
       });
-      marketingVideo.addEventListener('touchmove', () => {
+      /*   marketingVideo.addEventListener('touchmove', () => {
         detectTap = true;
       });
       marketingVideo.addEventListener('touchend', () => {
@@ -38,7 +37,7 @@ export class AppComponent implements AfterViewInit {
             marketingVideo.pause();
           }
         }
-      });
+      }); */
     }
   }
 }

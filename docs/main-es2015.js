@@ -87,25 +87,22 @@ class AppComponent {
             // });
             // // debugger;
             marketingVideo.addEventListener('touchstart', () => {
-                detectTap = false;
-                // console.log("touchstarted");
+                marketingVideo.play();
             });
-            marketingVideo.addEventListener('touchmove', () => {
-                detectTap = true;
+            /*   marketingVideo.addEventListener('touchmove', () => {
+              detectTap = true;
             });
             marketingVideo.addEventListener('touchend', () => {
-                if (detectTap) {
-                    marketingVideo.pause();
+              if (detectTap) {
+                marketingVideo.pause();
+              } else {
+                if (marketingVideo.paused) {
+                  marketingVideo.play();
+                } else {
+                  marketingVideo.pause();
                 }
-                else {
-                    if (marketingVideo.paused) {
-                        marketingVideo.play();
-                    }
-                    else {
-                        marketingVideo.pause();
-                    }
-                }
-            });
+              }
+            }); */
         }
     }
 }

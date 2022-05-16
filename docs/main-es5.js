@@ -154,12 +154,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // });
             // // debugger;
             marketingVideo.addEventListener('touchstart', function () {
-              detectTap = false; // console.log("touchstarted");
+              marketingVideo.play();
             });
-            marketingVideo.addEventListener('touchmove', function () {
+            /*   marketingVideo.addEventListener('touchmove', () => {
               detectTap = true;
             });
-            marketingVideo.addEventListener('touchend', function () {
+            marketingVideo.addEventListener('touchend', () => {
               if (detectTap) {
                 marketingVideo.pause();
               } else {
@@ -169,7 +169,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   marketingVideo.pause();
                 }
               }
-            });
+            }); */
           }
         }
       }]);
