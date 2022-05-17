@@ -22,10 +22,10 @@ export class AppComponent implements AfterViewInit {
       // });
       // // debugger;
       marketingVideo.addEventListener('touchstart', () => {
-        if (marketingVideo.played) {
-          marketingVideo.pause();
-        } else {
+        if (marketingVideo.paused) {
           marketingVideo.play();
+        } else {
+          marketingVideo.pause();
         }
       });
       /*   marketingVideo.addEventListener('touchmove', () => {
